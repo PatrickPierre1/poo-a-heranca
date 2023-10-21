@@ -3,15 +3,31 @@ package faculdadeheranca;
 import java.util.Scanner;
 
 public class Docente extends Funcionario{
+    public String getFormacao() {
+        return formacao;
+    }
+
+    public void setFormacao(String formacao) {
+        this.formacao = formacao;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
     private String formacao;
     private String cidade;
 
     @Override
     public String toString() {
         return "Docente{" +
-                "nome='" + nome + '\'' +
-                ", formacao='" + formacao + '\'' +
-                ", cidade='" + cidade + '\'' +
+                "nome='" + getNome() + '\'' +
+                ", formacao='" + getFormacao() + '\'' +
+                ", cidade='" + getCidade() + '\'' +
                 '}';
     }
 
@@ -20,13 +36,13 @@ public class Docente extends Funcionario{
         var scanner = new Scanner(System.in);
 
         System.out.println("Nome: ");
-        docente.nome = scanner.nextLine();
+        docente.setNome(scanner.nextLine());
 
         System.out.println("Formação: ");
-        docente.formacao = scanner.nextLine();
+        docente.setFormacao(scanner.nextLine());
 
         System.out.println("Cidade: ");
-        docente.cidade = scanner.nextLine();
+        docente.setCidade(scanner.nextLine());
 
         return docente;
     }

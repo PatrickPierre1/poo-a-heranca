@@ -14,6 +14,8 @@ public class Programa {
 
         funcionarios.forEach(Funcionario::imprimir);
 
+        Funcionario teste = new Coordenador();
+
     }
 
     private static void cadastrarFuncionarios(List<Funcionario> funcionarios) {
@@ -37,4 +39,6 @@ public class Programa {
 
         } while (scanner.nextLine().equals("1"));
     }
+
+
 }

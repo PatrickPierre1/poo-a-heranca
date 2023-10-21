@@ -3,6 +3,22 @@ package faculdadeheranca;
 import java.util.Scanner;
 
 public class Assistente extends Funcionario {
+    public String getSetor() {
+        return setor;
+    }
+
+    public void setSetor(String setor) {
+        this.setor = setor;
+    }
+
+    public String getAtribuicao() {
+        return atribuicao;
+    }
+
+    public void setAtribuicao(String atribuicao) {
+        this.atribuicao = atribuicao;
+    }
+
     private String setor;
     private String atribuicao;
 
@@ -10,9 +26,9 @@ public class Assistente extends Funcionario {
     @Override
     public String toString() {
         return "Assistente{" +
-                "nome='" + nome + '\'' +
-                ", setor='" + setor + '\'' +
-                ", atribuicao='" + atribuicao + '\'' +
+                "nome='" + getNome() + '\'' +
+                ", setor='" + getSetor() + '\'' +
+                ", atribuicao='" + getAtribuicao() + '\'' +
                 '}';
     }
 
@@ -21,13 +37,13 @@ public class Assistente extends Funcionario {
         var scanner = new Scanner(System.in);
 
         System.out.println("Nome: ");
-        assistente.nome = scanner.nextLine();
+        assistente.setNome(scanner.nextLine());
 
         System.out.println("Setor: ");
-        assistente.setor = scanner.nextLine();
+        assistente.setSetor(scanner.nextLine());
 
         System.out.println("Atribuição: ");
-        assistente.atribuicao = scanner.nextLine();
+        assistente.setAtribuicao(scanner.nextLine());
 
         return assistente;
     }

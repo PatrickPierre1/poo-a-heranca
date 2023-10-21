@@ -5,14 +5,31 @@ import java.util.Scanner;
 public class Coordenador extends Funcionario {
 
     private String curso;
+
     private String turma;
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public String getTurma() {
+        return turma;
+    }
+
+    public void setTurma(String turma) {
+        this.turma = turma;
+    }
 
     @Override
     public String toString() {
         return "Coordenador{" +
-                "nome='" + nome + '\'' +
-                ", curso='" + curso + '\'' +
-                ", turma='" + turma + '\'' +
+                "nome='" + getNome() + '\'' +
+                ", curso='" + getCurso() + '\'' +
+                ", turma='" + getTurma() + '\'' +
                 '}';
     }
 
@@ -21,13 +38,13 @@ public class Coordenador extends Funcionario {
         var scanner = new Scanner(System.in);
 
         System.out.println("Nome: ");
-        coordenador.nome = scanner.nextLine();
+        coordenador.setNome(scanner.nextLine());
 
         System.out.println("Curso: ");
-        coordenador.curso = scanner.nextLine();
+        coordenador.setCurso(scanner.nextLine());
 
         System.out.println("Turma: ");
-        coordenador.turma = scanner.nextLine();
+        coordenador.setTurma(scanner.nextLine());
 
         return coordenador;
     }

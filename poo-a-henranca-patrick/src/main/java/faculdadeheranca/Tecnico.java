@@ -3,15 +3,31 @@ package faculdadeheranca;
 import java.util.Scanner;
 
 public class Tecnico extends Funcionario{
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+
     private String departamento;
     private String especialidade;
 
     @Override
     public String toString() {
         return "Tecnico{" +
-                "nome='" + nome + '\'' +
-                ", departamento='" + departamento + '\'' +
-                ", especialidade='" + especialidade + '\'' +
+                "nome='" + getNome() + '\'' +
+                ", departamento='" + getDepartamento() + '\'' +
+                ", especialidade='" + getEspecialidade() + '\'' +
                 '}';
     }
 
@@ -21,13 +37,13 @@ public class Tecnico extends Funcionario{
         var scanner = new Scanner(System.in);
 
         System.out.println("Nome: ");
-        tecnico.nome = scanner.nextLine();
+        tecnico.setNome(scanner.nextLine());
 
         System.out.println("Departamento: ");
-        tecnico.departamento = scanner.nextLine();
+        tecnico.setDepartamento(scanner.nextLine());
 
         System.out.println("Especialidade: ");
-        tecnico.especialidade = scanner.nextLine();
+        tecnico.setEspecialidade(scanner.nextLine());
 
         return tecnico;
     }
